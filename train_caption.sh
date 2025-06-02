@@ -1,0 +1,16 @@
+NPROC_PER_NODE=7 CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6 swift sft \
+    --model_type qwen2-audio-7b \
+    --sft_type full \
+    --output_dir ./nisqa_caption_5 \
+    --num_train_epochs 2 \
+    --eval_steps  1000 \
+    --save_steps  1000 \
+    --batch_size 4  \
+    --eval_batch_size 4 \
+    --logging_steps 5 \
+    --learning_rate 1e-5 \
+    --deepspeed default-zero2 \
+    --dtype fp16 \
+    --dataset ../data/nisqa/NISQA_Corpus/NISQA_TRAIN_SIM/new_version/train_10k_llama3.1-70b_0.json ../data/nisqa/NISQA_Corpus/NISQA_TRAIN_SIM/new_version/train_10k_llama3.1-70b_1-t0.9-p0.85.json ../data/nisqa/NISQA_Corpus/NISQA_TRAIN_SIM/new_version/train_10k_llama3.1-70b_1-t0.9-p0.95.json ../data/nisqa/NISQA_Corpus/NISQA_TRAIN_SIM/new_version/train_10k_llama3.1-70b_1-t1.1-p0.85.json ../data/nisqa/NISQA_Corpus/NISQA_TRAIN_SIM/new_version/train_10k_llama3.1-70b_1-t1.1-p0.95.json  \
+    --val_dataset ../data/nisqa/NISQA_Corpus/NISQA_TRAIN_SIM/test_nisqa_llama_2.5k.json  \
+    --val_dataset_sample 100 \
