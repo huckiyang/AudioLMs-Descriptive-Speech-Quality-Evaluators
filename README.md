@@ -99,3 +99,17 @@ For each run, the following files will be generated in the output directory:
 - `audio1_mos_diverse.txt`, `audio2_mos_diverse.txt`: Diverse MOS predictions (higher temperature)
 - `ab_test.txt`: A/B test comparison result
 - `ab_test_summary.txt`: Summary of which audio is better ([SpeechA] or [SpeechB])
+  
+
+## References
+
+- ICLR 2025
+
+```bib
+@article{chen2025audio,
+  title={Audio Large Language Models Can Be Descriptive Speech Quality Evaluators},
+  author={Chen, Chen and Hu, Yuchen and Wang, Siyin and Wang, Helin and Chen, Zhehuai and Zhang, Chao and Yang, Chao-Han Huck and Chng, Eng Siong},
+  journal={Proc. ICLR},
+  year={2025}
+}
+```
